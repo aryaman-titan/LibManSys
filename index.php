@@ -1,6 +1,9 @@
 
 <?php 
 include('server.php');
+if (isset($_SESSION['id'])) {
+    header('location: welcome.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +35,7 @@ include('server.php');
             <form method="POST" action="index.php">
                 <input type="text" name="username" placeholder="Enter username or email ID" required />
                 <input type="password" name="password" placeholder="Enter password" required />
-                <button type="submit" class="btn login">login</button>
+                <button type="submit" name="login" class="btn login">login</button>
             </form>
         </div>
 
