@@ -37,7 +37,7 @@ if (isset($_POST["login"])) {
     $username =  mysqli_real_escape_string($conn, $_POST['username']);
     $password =  mysqli_real_escape_string($conn, $_POST['password']);
 
-    $get_user = "SELECT * FROM userData WHERE username='$username' AND password='$password]'";
+    $get_user = "SELECT * FROM userData WHERE username='$username' AND password='$password'";
     $result = mysqli_query($conn, $get_user);
 
     if (mysqli_num_rows($result) == 1) {
