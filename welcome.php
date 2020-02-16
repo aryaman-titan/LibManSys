@@ -57,13 +57,16 @@ Welcome <?php echo $_SESSION["name"];?>
   <?php 
     $get_books = mysqli_query($conn, "SELECT * FROM `book_list`");
     while($row = $get_books->fetch_assoc()){
+      
       echo "<tr>
       <td>".$row['id']."</td>
       <td>".$row['book_name']."</td>
       <td>".$row['book_count_left']."</td>
       <td>".$row['book_count_issued']."</td>
+      <td><a href='welcome.php?issue_id=".$row['id']."'>Request Issue</td>
     </tr>";
     }
+
   ?>
   
   
