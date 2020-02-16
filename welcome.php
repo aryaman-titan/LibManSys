@@ -23,6 +23,11 @@ session_start();
 <body>
 Welcome <?php echo $_SESSION["name"];?>
 
-<a href="welcome.php?logout=1">Logout</a>
+<div style="display: flex; justify-content: flex-end;"><a href="welcome.php?logout=1">Logout</a>
+</div>
+<hr>
+
+
+
 </body>
 </html>
