@@ -18,7 +18,7 @@ if (isset($_SESSION['id'])) {
     <title>Library Management System</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
 
 </head>
 
