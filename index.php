@@ -15,7 +15,7 @@ if (isset($_SESSION['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Library Management System</title>
+    
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="login.css">
@@ -23,6 +23,10 @@ if (isset($_SESSION['id'])) {
 </head>
 
 <body>
+
+<div class="form-modal">
+    <div class="login-form"><a href="admin.php" class="btn login" style="text-decoration:none">Login as Admin</a></div>
+</div>
 
     <div class="form-modal">
 
@@ -35,8 +39,7 @@ if (isset($_SESSION['id'])) {
             <form method="POST" action="index.php">
                 <input type="text" name="username" placeholder="Enter username or email ID" required />
                 <input type="password" name="password" placeholder="Enter password" required />
-                <button type="submit" name="login-admin" class="btn login">login as admin</button>
-                <button type="submit" name="login-client" class="btn login">login as client</button>
+                <button type="submit" name="login-client" class="btn login">login as Client</button>
             </form>
 
         </div>
