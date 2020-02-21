@@ -35,8 +35,10 @@ if (isset($_SESSION['id'])) {
             <form method="POST" action="index.php">
                 <input type="text" name="username" placeholder="Enter username or email ID" required />
                 <input type="password" name="password" placeholder="Enter password" required />
-                <button type="submit" name="login" class="btn login">login</button>
+                <button type="submit" name="login-admin" class="btn login">login as admin</button>
+                <button type="submit" name="login-client" class="btn login">login as client</button>
             </form>
+
         </div>
 
         <div id="signup-form">
@@ -47,7 +49,6 @@ if (isset($_SESSION['id'])) {
                 <input type="text" name="enrl" placeholder="Enter your Enrl. No." required />
                 <input type="password" name="password" placeholder="Create password" required />
                 <button type="submit" name="signup" class="btn signup">create account</button>
-
             </form>
         </div>
 

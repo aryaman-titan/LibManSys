@@ -32,7 +32,7 @@ if (isset($_POST["signup"])) {
     }
 }
 
-if (isset($_POST["login"])) {
+if (isset($_POST["login-client"])) {
 
     $username =  mysqli_real_escape_string($conn, $_POST['username']);
     $password =  mysqli_real_escape_string($conn, $_POST['password']);
@@ -48,4 +48,25 @@ if (isset($_POST["login"])) {
         }
         header('location: welcome.php');
     }
+}
+
+if (isset($_POST["login-admin"])) {
+
+    if($_POST['username']=="admin"){
+
+        $password =  mysqli_real_escape_string($conn, $_POST['password']);
+    
+        $get_user = "SELECT * FROM userData WHERE username='admin' AND password='$password'";
+        $result = mysqli_query($conn, $get_user);
+    
+        if (mysqli_num_rows($result) == 1) {
+            while ($row = mysqli_fetch_array($result)) {
+                $_SESSION['id'] = $row['userID'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['username'] = $row['username'];
+            }
+            header('location: admin.php');
+        }
+    }
+
 }

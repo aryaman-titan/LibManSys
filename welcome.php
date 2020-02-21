@@ -52,6 +52,7 @@ Welcome <?php echo $_SESSION["name"];?>
     <th>Name</th>
     <th>Copies Left</th>
     <th>Copies Issued</th>
+    <th></th>
   </tr>
 
   <?php 
