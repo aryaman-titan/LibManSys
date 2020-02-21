@@ -17,7 +17,7 @@ if(isset($_GET['requestId'])){
   $id = $_SESSION['id'];
 
   mysqli_query($conn, "INSERT INTO `client_request` (`token_id`, `book_id`, `client_id`, `status`) VALUES (NULL, '$req_id', '$id', 'Pending')");
-  
+
 }
 
 
@@ -92,7 +92,7 @@ if(isset($_GET['requestId'])){
       echo "<td>Already Issued</td>";
     }
     else{
-      echo "<td><a href=\"welcome.php?requestId=".$row['id']."\"></a></td>";
+      echo "<td><a href=\"welcome.php?requestId=".$row['id']."\">Request Issue</a></td>";
     }
     echo "</tr>";
       }
