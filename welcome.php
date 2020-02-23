@@ -12,17 +12,12 @@ if (isset($_GET['logout'])) {
   header('location: index.php');
 }
 
-if(isset($_GET['requestId'])){
+if (isset($_GET['requestId'])) {
   $req_id = $_GET['requestId'];
   $id = $_SESSION['id'];
 
   mysqli_query($conn, "INSERT INTO `client_request` (`token_id`, `book_id`, `client_id`, `status`) VALUES (NULL, '$req_id', '$id', 'Pending')");
-
 }
-
-
-
-
 
 ?>
 
@@ -72,15 +67,15 @@ if(isset($_GET['requestId'])){
 
       <?php
       $get_books = mysqli_query($conn, "SELECT * FROM `book_list`");
-      
-      function isIssued($conn, $bookId){
+
+      function isIssued($conn, $bookId)
+      {
         $uid = $_SESSION['id'];
-          $b_id = $bookId;
+        $b_id = $bookId;
         $check_issue = mysqli_query($conn, "SELECT * FROM `client_request` WHERE book_id = $b_id AND client_id = $uid");
-        if(mysqli_num_rows($check_issue) == 1){
+        if (mysqli_num_rows($check_issue) == 1) {
           return true;
-        }
-        else{
+        } else {
           return false;
         }
       }
@@ -91,13 +86,12 @@ if(isset($_GET['requestId'])){
       <td>" . $row['book_name'] . "</td>
       <td>" . $row['book_count_left'] . "</td>
       <td>" . $row['book_count_issued'] . "</td>";
-    if(isIssued($conn, $row['id'])){
-      echo "<td>Already Issued</td>";
-    }
-    else{
-      echo "<td><a href=\"welcome.php?requestId=".$row['id']."\">Request Issue</a></td>";
-    }
-    echo "</tr>";
+        if (isIssued($conn, $row['id'])) {
+          echo "<td>Already Issued</td>";
+        } else {
+          echo "<td><a href=\"welcome.php?requestId=" . $row['id'] . "\">Request Issue</a></td>";
+        }
+        echo "</tr>";
       }
 
       ?>
